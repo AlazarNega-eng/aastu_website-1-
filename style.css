@@ -1362,3 +1362,228 @@ p {
     cursor: not-allowed;
     opacity: 0.7;
 }
+/*--- Reuse dashboard styles or create specific ones ---*/
+
+.dashboard-section { padding: 6rem 0; background-color: var(--secondary-color); min-height: calc(100vh - var(--header-height) - 150px); }
+.dashboard-container { max-width: 900px; margin: 0 auto; padding: 0 15px; }
+.dashboard-welcome { background-color: #fff; padding: 2rem 3rem; border-radius: 8px; box-shadow: 0 3px 15px rgba(0,0,0,0.07); margin-bottom: 3rem; }
+.dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; }
+.dashboard-card { background-color: #fff; padding: 2.5rem; border-radius: 8px; box-shadow: 0 3px 15px rgba(0,0,0,0.07); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
+.dashboard-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+.dashboard-card i { font-size: 3.5rem; color: var(--accent-color); margin-bottom: 1.5rem; }
+.dashboard-card h3 { color: var(--primary-color); margin-bottom: 1rem; font-size: 2rem; }
+.dashboard-card p { color: var(--text-muted); font-size: 1.5rem; margin-bottom: 2rem; flex-grow: 1; /* Allow paragraph to grow */ }
+.dashboard-card .cta { margin-top: auto; font-size: 1.5rem; padding: 10px 25px; }
+
+
+/* Basic Dashboard Styles */
+.dashboard-section { padding: 6rem 0; background-color: var(--secondary-color); min-height: calc(100vh - var(--header-height) - 150px); }
+.dashboard-container { max-width: 900px; margin: 0 auto; padding: 0 15px; }
+.dashboard-welcome { background-color: #fff; padding: 2rem 3rem; border-radius: 8px; box-shadow: 0 3px 15px rgba(0,0,0,0.07); margin-bottom: 3rem; }
+.dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; }
+.dashboard-card { background-color: #fff; padding: 2.5rem; border-radius: 8px; box-shadow: 0 3px 15px rgba(0,0,0,0.07); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
+.dashboard-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+.dashboard-card i { font-size: 3.5rem; color: var(--accent-color); margin-bottom: 1.5rem; }
+.dashboard-card h3 { color: var(--primary-color); margin-bottom: 1rem; font-size: 2rem; }
+.dashboard-card p { color: var(--text-muted); font-size: 1.5rem; margin-bottom: 1rem; /* Reduced margin */ flex-grow: 1; }
+.dashboard-card .status { display: inline-block; padding: 0.4em 0.8em; font-size: 1.2rem; font-weight: 600; border-radius: 20px; margin-bottom: 1.5rem; }
+.dashboard-card .status-pending { background-color: #ffc107; color: #333; } /* Yellow */
+.dashboard-card .status-approved { background-color: #28a745; color: white; } /* Green */
+.dashboard-card .status-rejected { background-color: #dc3545; color: white; } /* Red */
+.dashboard-card .cta { margin-top: auto; font-size: 1.5rem; padding: 10px 25px; }
+
+/*-- Reuse or adapt list/table styles --*/
+
+.list-section { padding: 6rem 0; background-color: #f8f9fa; min-height: calc(100vh - var(--header-height) - 150px);}
+.list-container { max-width: 1100px; margin: 0 auto; background: #fff; padding: 3rem 4rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
+.list-container h1 { text-align: center; margin-bottom: 3rem; color: var(--primary-color); }
+.student-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+.student-table th, .student-table td { padding: 1.2rem 1rem; text-align: left; border-bottom: 1px solid #eee; font-size: 1.5rem; vertical-align: middle; }
+.student-table th { background-color: var(--secondary-color); font-weight: 600; color: #444; }
+.student-table td .cta-small { padding: 6px 12px; font-size: 1.3rem; margin-right: 5px; display: inline-block; line-height: 1.4; } /* Added line-height */
+.no-students { text-align: center; font-size: 1.6rem; color: #777; padding: 3rem; }
+/* Add filter styles if needed */
+
+/* === Styles for Department Grade Entry Page (dept_enter_grades.php) === */
+
+/* --- General Form Layout --- */
+.form-section {
+  padding: 6rem 0;
+  background-color: #f8f9fa; /* Use light background */
+  min-height: calc(100vh - var(--header-height) - 150px); /* Ensure enough height */
+}
+
+.form-container {
+  max-width: 950px; /* Adjust width as needed */
+  margin: 0 auto;
+  background: #fff;
+  padding: 3rem 4rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-container h1,
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.form-container h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.form-container .student-name {
+  font-weight: 600;
+}
+
+/* --- Grade ENTRY Table (#grade-entry-table) --- */
+/* Applies specifically to the table where grades are entered */
+.grade-entry-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  table-layout: fixed; /* Helps keep columns consistent */
+}
+
+.grade-entry-table th,
+.grade-entry-table td {
+  padding: 0.8rem; /* Slightly tighter padding for entry */
+  text-align: left;
+  border: 1px solid #eee;
+  font-size: 1.4rem;
+  vertical-align: top; /* Align content to top */
+}
+
+.grade-entry-table th {
+  background-color: var(--secondary-color); /* Light bg for headers */
+  font-weight: 600;
+  color: #444; /* Darker text for header */
+}
+
+/* Column Widths for Entry Table (Adjust percentages as needed) */
+.grade-entry-table th:nth-child(1), .grade-entry-table td:nth-child(1) { width: 15%; } /* Course Code */
+.grade-entry-table th:nth-child(2), .grade-entry-table td:nth-child(2) { width: 30%; } /* Course Title */
+.grade-entry-table th:nth-child(3), .grade-entry-table td:nth-child(3) { width: 15%; } /* Semester */
+.grade-entry-table th:nth-child(4), .grade-entry-table td:nth-child(4) { width: 12%; } /* Acad Year */
+.grade-entry-table th:nth-child(5), .grade-entry-table td:nth-child(5) { width: 8%; }  /* Credits */
+.grade-entry-table th:nth-child(6), .grade-entry-table td:nth-child(6) { width: 12%; } /* Grade */
+.grade-entry-table th:nth-child(7), .grade-entry-table td:nth-child(7) { width: 8%; text-align: center; } /* Remove */
+
+
+/* Basic table styles */
+.list-section { padding: 6rem 0; background-color: #f8f9fa; }
+.list-container { max-width: 1100px; margin: 0 auto; background: #fff; padding: 3rem 4rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
+.list-container h1 { text-align: center; margin-bottom: 3rem; color: var(--primary-color); }
+.student-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+.student-table th, .student-table td { padding: 1.2rem 1rem; text-align: left; border-bottom: 1px solid #eee; font-size: 1.5rem; vertical-align: middle; }
+.student-table th { background-color: var(--secondary-color); font-weight: 600; color: #444; }
+.student-table td .cta-small { padding: 6px 12px; font-size: 1.3rem; margin-right: 5px; display: inline-block; }
+.no-students { text-align: center; font-size: 1.6rem; color: #777; padding: 3rem; }
+
+/* === Styles for Grade ENTRY Table & Add Button (Based on Image) === */
+
+/* The table holding the input fields */
+.grade-entry-table {
+  width: 100%;
+  border-collapse: collapse; /* Ensures borders connect cleanly */
+  margin-bottom: 1.5rem; /* Space below table before Add button */
+  border: 1px solid #dee2e6; /* Light grey border around the table */
+  font-size: 1.4rem; /* Base font size for table content */
+}
+
+/* Table Header Cells (Course Code, Course Title, etc.) */
+.grade-entry-table th {
+  background-color: #f8f9fa; /* Very light grey background */
+  border: 1px solid #dee2e6; /* Light grey border */
+  padding: 0.8rem 1rem;   /* Padding inside header cells */
+  font-weight: 600;      /* Make headers slightly bolder */
+  text-align: left;      /* Align header text left */
+  color: #495057;        /* Dark grey text color */
+  white-space: nowrap;   /* Prevent headers wrapping if possible */
+}
+
+/* Table Data Cells (where inputs/buttons go) */
+.grade-entry-table td {
+  border: 1px solid #dee2e6; /* Light grey border */
+  padding: 0.5rem; /* Slightly less padding for cells with inputs */
+  vertical-align: middle; /* Vertically align content in the middle */
+}
+
+/* Input fields (text, number) and Select dropdown within the table */
+.grade-entry-table input[type="text"],
+.grade-entry-table input[type="number"],
+.grade-entry-table select {
+  width: 100%;                /* Make input fill the cell */
+  padding: 0.6rem 0.8rem;     /* Padding inside the input */
+  border: 1px solid #ced4da; /* Standard input border color */
+  border-radius: 4px;         /* Slightly rounded corners */
+  font-size: 1.4rem;          /* Match cell font size */
+  box-sizing: border-box;     /* Include padding/border in width calculation */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Style for focused inputs/select */
+.grade-entry-table input:focus,
+.grade-entry-table select:focus {
+  border-color: #86b7fe; /* Light blue border on focus (like Bootstrap) */
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); /* Blue glow on focus */
+  outline: none;          /* Remove default browser outline */
+}
+
+/* Specific cell for the remove button */
+.grade-entry-table td:last-child {
+  text-align: center; /* Center the button horizontally */
+}
+
+/* The 'X' remove button */
+.grade-entry-table .remove-row-btn {
+  background-color: #e9ecef; /* Light grey background initially */
+  color: #6c757d;       /* Grey text color */
+  border: 1px solid #ced4da; /* Match input border */
+  padding: 4px 8px;     /* Small padding */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.3rem;      /* Slightly smaller font for 'X' */
+  font-weight: bold;
+  line-height: 1;         /* Ensure button height is tight */
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.grade-entry-table .remove-row-btn:hover {
+  background-color: #dc3545; /* Red background on hover */
+  border-color: #dc3545;
+  color: white;           /* White 'X' on hover */
+}
+
+/* Container for the Add button (optional, helps alignment) */
+.add-row-container {
+  margin-bottom: 2rem; /* Space below the button */
+  text-align: left;    /* Align button container to the left */
+}
+
+/* The '+ Add Another Course' button */
+.add-row-btn {
+  background-color: #f8f9fa; /* Light grey background */
+  color: #495057;          /* Dark grey text */
+  border: 1px solid #ced4da; /* Match input border */
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 500;       /* Slightly bolder than normal text */
+  display: inline-block; /* Allow left alignment */
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.add-row-btn:hover {
+  background-color: #e2e6ea; /* Slightly darker grey on hover */
+  border-color: #adb5bd;
+}
+
+/* Optional: Add specific widths if needed, but table-layout:fixed helps */
+/* Example:
+.grade-entry-table th:nth-child(5), .grade-entry-table td:nth-child(5) { width: 10%; }
+.grade-entry-table th:nth-child(7), .grade-entry-table td:nth-child(7) { width: 10%; }
+*/

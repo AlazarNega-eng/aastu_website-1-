@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <title>AASTU University - Ethiopia's Technology University</title>
+  <title>AASTU University Website</title>
 </head>
 <body>
   <!------------- Header --------------->
@@ -53,11 +53,11 @@
   <!-------- Hero Section --------------->
   <section id="hero" class="hero-section">
     <div class="hero-background">
-        <img src="./images/banner.png" alt="AASTU Campus Banner">
+        <img src="./images/AASTU.jpeg" alt="AASTU Campus Banner">
     </div>
     <div class="hero container">
       <div>
-        <h1>Ethiopia's<br><span>Technology University</span></h1>
+        <h1>AASTU<br><span>University</span></h1>
         <a href="#services" type="button" class="cta">Explore Programs</a>
       </div>
     </div>
