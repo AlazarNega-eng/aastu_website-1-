@@ -147,7 +147,7 @@
             <p class="testimonials-intro">Hear directly from students about their experiences with AASTU's supportive environment, dedicated faculty, and modern facilities.</p>
             <div class="row">
                 <div class="testimonial-col">
-                    <img src="./images/user3.jpg" alt="Photo of Bezawit Melese">
+                    <img src="./images/user3.jpg" alt="Photo of Mahelet Asefa">
                     <div>
                        <p>"AASTU provided exceptional opportunities to develop technical skills and participate in cutting-edge research. The hands-on learning is truly valuable."</p>
                        <h3>Mahelet Assefa</h3>
@@ -158,7 +158,7 @@
                     </div>
                 </div>
                 <div class="testimonial-col">
-                    <img src="./images/user4.jpg" alt="Photo of Dawit Solomon">
+                    <img src="./images/user4.jpg" alt="Photo of Alazar Nega">
                     <div>
                        <p>"Choosing AASTU was a great decision. The focus on practical skills and industry connections prepared me well for my future career in engineering."</p>
                        <h3>Alazar Nega</h3>

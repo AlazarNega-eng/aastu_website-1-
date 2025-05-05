@@ -60,11 +60,42 @@ $form_data = isset($_SESSION['form_data']) ? $_SESSION['form_data'] : $cost_data
 unset($_SESSION['form_data']); // Clear session data after use
 
 // --- Prepare checkbox arrays correctly for checking ---
-$demand_kind_str = $form_data['demand_service_kind'] ?? ''; // Get string or empty
-$demand_kind_array = !empty($demand_kind_str) ? explode(',', $demand_kind_str) : [];
+//$demand_kind_str = $form_data['demand_service_kind'] ?? ''; // Get string or empty
+//$demand_kind_array = !empty($demand_kind_str) ? explode(',', $demand_kind_str) : [];
 
-$demand_cash_str = $form_data['demand_service_cash'] ?? ''; // Get string or empty
-$demand_cash_array = !empty($demand_cash_str) ? explode(',', $demand_cash_str) : [];
+//$demand_cash_str = $form_data['demand_service_cash'] ?? ''; // Get string or empty
+//$demand_cash_array = !empty($demand_cash_str) ? explode(',', $demand_cash_str) : [];
+
+// --- Prepare checkbox arrays correctly for checking ---
+
+// --- Demand Service Kind ---
+$demand_kind_value = $form_data['demand_service_kind'] ?? null; // Get value from form_data (could be array or string or null)
+$demand_kind_array = []; // Initialize as empty array
+if (is_array($demand_kind_value)) {
+    // If it's already an array (from failed POST saved in session), use it directly (sanitize!)
+    $demand_kind_array = array_map('htmlspecialchars', $demand_kind_value);
+    // Optional Debug log: error_log("DEBUG: demand_service_kind was an array in session.");
+} elseif (is_string($demand_kind_value) && $demand_kind_value !== '') {
+    // If it's a string (from DB), explode it
+    $demand_kind_array = explode(',', $demand_kind_value);
+    // Optional Debug log: error_log("DEBUG: demand_service_kind was a string, exploded: " . print_r($demand_kind_array, true));
+}
+// else: it remains an empty array if null or empty string
+
+
+// --- Demand Service Cash ---
+$demand_cash_value = $form_data['demand_service_cash'] ?? null; // Get value
+$demand_cash_array = []; // Initialize
+if (is_array($demand_cash_value)) {
+    // If it's already an array, use it directly (sanitize!)
+    $demand_cash_array = array_map('htmlspecialchars', $demand_cash_value);
+    // Optional Debug log: error_log("DEBUG: demand_service_cash was an array in session.");
+} elseif (is_string($demand_cash_value) && $demand_cash_value !== '') {
+    // If it's a string, explode it
+    $demand_cash_array = explode(',', $demand_cash_value);
+    // Optional Debug log: error_log("DEBUG: demand_service_cash was a string, exploded: " . print_r($demand_cash_array, true));
+}
+// else: remains empty array
 
 // Decide if form should be disabled
 $form_disabled = !empty($cost_data) && !isset($_SESSION['form_data']); // Disable only if DB data exists AND no session form data

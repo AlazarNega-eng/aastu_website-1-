@@ -60,21 +60,23 @@ include 'header.php';
                 <tbody>
                     <?php foreach ($students as $student): ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($student['first_name'] . ' ' . $student['last_name']); ?></td>
-                            <td><?php echo htmlspecialchars($student['username']); ?></td>
-                            <td><?php echo htmlspecialchars($student['email_address']); ?></td>
-                            <td><?php echo htmlspecialchars(date('Y-m-d H:i', strtotime($student['registration_submitted_at']))); ?></td>
-                            <td>
-                                <!-- View details link (points back to student registration form maybe?) -->
-                                <a href="student_registration_view.php?profile_id=<?php echo $student['profile_id']; ?>" class="cta cta-outline cta-small" title="View Details">View</a>
-                                <!-- Approval Form/Link -->
-                                <form action="process_dept_approval.php" method="POST" style="display:inline;">
-                                    <input type="hidden" name="profile_id" value="<?php echo $student['profile_id']; ?>">
-                                    <input type="hidden" name="user_id" value="<?php echo $student['user_id']; ?>">
-                                    <button type="submit" name="action" value="approve" class="cta cta-small" title="Approve Registration">Approve</button>
-                                     <!-- Optional: Reject Button -->
-                                     <!-- <button type="submit" name="action" value="reject" class="cta cta-outline cta-small" style="border-color: red; color: red;" title="Reject Registration">Reject</button> -->
-                                </form>
+                        <td data-label="Name"><?php echo htmlspecialchars($student['first_name'] . ' ' . $student['last_name']); ?></td>
+            <td data-label="Username"><?php echo htmlspecialchars($student['username']); ?></td>
+            <td data-label="Email"><?php echo htmlspecialchars($student['email_address']); ?></td>
+            <td data-label="Submitted"><?php echo htmlspecialchars(date('Y-m-d H:i', strtotime($student['registration_submitted_at']))); ?></td>
+            <td data-label="Actions">
+                <?php if (isset($student['profile_id'])): // Add safety check ?>
+                <a href="student_registration_view.php?profile_id=<?php echo $student['profile_id']; ?>" class="cta cta-outline cta-small" title="View Details">View</a>
+                <form action="process_dept_approval.php" method="POST" style="display:inline;">
+                    <input type="hidden" name="profile_id" value="<?php echo $student['profile_id']; ?>">
+                    <?php if (isset($student['user_id'])): ?>
+                        <input type="hidden" name="user_id" value="<?php echo $student['user_id']; ?>">
+                    <?php endif; ?>
+                    <button type="submit" name="action" value="approve" class="cta cta-small" title="Approve Registration">Approve</button>
+                </form>
+                 <?php else: ?>
+                     <span style="color:red;">Error</span>
+                 <?php endif; ?>
                             </td>
                         </tr>
                     <?php endforeach; ?>
