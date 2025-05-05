@@ -3,11 +3,16 @@ session_start();
 require_once 'db_connect.php';
 require_once 'helpers.php'; // Includes getValue
 
-// --- Auth Check & Fetch existing data ($profile_data) as before ---
-// ... (Your existing PHP code to check login and fetch $profile_data) ...
+// Ensure $profile_data is defined
+$profile_data = isset($profile_data) ? $profile_data : [];
 
-// Prioritize session data
+// Safely handle session data
 $form_data = isset($_SESSION['form_data']) ? $_SESSION['form_data'] : $profile_data;
+
+// Unset session data only if it exists
+if (isset($_SESSION['form_data'])) {
+    unset($_SESSION['form_data']);
+}
 unset($_SESSION['form_data']);
 
 $page_title = "Student Registration";
