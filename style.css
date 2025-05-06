@@ -2797,3 +2797,69 @@ button {
     width: calc(50% - 10px);
   } /* Make buttons stack nicely */
 }
+/* === Styles for Department Student List Table (Additions) === */
+
+/* Existing styles for cta-small */
+.student-table td .cta-small {
+  padding: 5px 10px;
+  font-size: 1.3rem;
+  margin-right: 5px;
+  margin-bottom: 4px;
+  display: inline-block;
+  line-height: 1.4;
+  vertical-align: middle;
+  border-radius: 20px; /* Make buttons pill-shaped like image */
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid transparent; /* Base border */
+}
+
+/* Style for the specific Approve button */
+.student-table td .button-approve {
+  background-color: #28a745; /* Green background */
+  border-color: #28a745; /* Matching border */
+  color: white; /* White text */
+  box-shadow: 0 2px 5px rgba(40, 167, 69, 0.3); /* Subtle green shadow */
+  padding: 6px 12px; /* Match padding with View button */
+  font-size: 1.3rem; /* Match font size */
+  border-radius: 20px; /* Match border radius */
+  display: inline-block; /* Ensure inline-block for alignment */
+  text-align: center; /* Center text */
+  vertical-align: middle; /* Align with other buttons */
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.student-table td .button-approve:hover {
+  background-color: #218838; /* Darker green on hover */
+  border-color: #1e7e34;
+  color: white;
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.4);
+}
+/* Optional: Adjust View button (cta-outline) to match image border */
+.student-table td .cta-outline.cta-small {
+  border-color: var(--accent-color); /* Red border */
+  color: var(--accent-color); /* Red text */
+  background-color: white; /* White background */
+  box-shadow: none;
+}
+.student-table td .cta-outline.cta-small:hover {
+  background-color: var(--accent-color); /* Red background on hover */
+  border-color: var(--accent-color);
+  color: white;
+  box-shadow: 0 2px 5px rgba(220, 20, 60, 0.3);
+}
+
+/* Adjust Action cell alignment if needed */
+.student-table td[data-label="Actions"] {
+  /* Styles from previous responsive query */
+  text-align: right; /* Align buttons right on desktop */
+}
+@media (max-width: 768px) {
+  .student-table td[data-label="Actions"] {
+    text-align: center; /* Center buttons on mobile */
+  }
+}

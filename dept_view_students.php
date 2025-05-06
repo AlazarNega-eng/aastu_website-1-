@@ -72,7 +72,7 @@ include 'header.php';
                     <?php if (isset($student['user_id'])): ?>
                         <input type="hidden" name="user_id" value="<?php echo $student['user_id']; ?>">
                     <?php endif; ?>
-                    <button type="submit" name="action" value="approve" class="cta cta-small" title="Approve Registration">Approve</button>
+                    <button type="submit" name="action" value="approve" class="cta-small button-approve" title="Approve Registration">Approve</button>
                 </form>
                  <?php else: ?>
                      <span style="color:red;">Error</span>
